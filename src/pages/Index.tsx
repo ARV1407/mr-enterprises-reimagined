@@ -24,32 +24,32 @@ const features = [
 ];
 
 const stats = [
-  { value: "25+", label: "Years Experience" },
-  { value: "500+", label: "Clients Served" },
-  { value: "10M+", label: "Boxes Produced" },
-  { value: "99%", label: "On-Time Delivery" },
+  { value: "24+", label: "Years Experience" },
+  { value: "26-50", label: "Skilled Employees" },
+  { value: "5-25 Cr", label: "Annual Turnover" },
+  { value: "100%", label: "Quality Tested" },
 ];
 
 const products = [
   {
-    name: "Corrugated Boxes",
+    name: "Corrugated Cardboard Boxes",
     description: "Standard and heavy-duty corrugated boxes for all shipping needs.",
     slug: "corrugated-boxes",
   },
   {
-    name: "Die-Cut Boxes",
-    description: "Precision-cut boxes for retail and display applications.",
-    slug: "die-cut-boxes",
-  },
-  {
-    name: "Printed Packaging",
+    name: "Printed Corrugated Boxes",
     description: "Custom branded packaging to elevate your product presentation.",
     slug: "printed-packaging",
   },
   {
-    name: "Industrial Packaging",
-    description: "Heavy-duty solutions for machinery and industrial products.",
-    slug: "industrial-packaging",
+    name: "Fruits Corrugated Boxes",
+    description: "Specialized boxes designed for fruits and agricultural products.",
+    slug: "fruits-boxes",
+  },
+  {
+    name: "Duplex Printed Boxes",
+    description: "Premium duplex board boxes with high-quality printing.",
+    slug: "duplex-boxes",
   },
 ];
 
@@ -70,16 +70,16 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-accent-foreground rounded-full mb-6 animate-fade-in">
               <Package className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-primary-foreground">
-                Trusted by 500+ businesses
+                Packaging Redefined Since 2000
               </span>
             </div>
             
             <h1 className="heading-display text-primary-foreground mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Packaging Solutions That Protect & Impress
+              Quality Corrugated Packaging Solutions
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              From corrugated boxes to custom printed packaging, we deliver quality solutions for businesses across industries.
+              With over two decades of experience, MR Enterprises delivers superior quality Corrugated Packaging Boxes and Tapes for businesses across industries.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -150,9 +150,9 @@ const Index = () => {
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="heading-section mb-6">Our Product Range</h2>
+              <h2 className="heading-section mb-6">Featured Products</h2>
               <p className="text-primary-foreground/70 text-lg mb-8">
-                We manufacture a comprehensive range of corrugated packaging products to meet diverse industry needs.
+                We manufacture a comprehensive range of corrugated packaging products including boxes, rolls, and BOPP tapes in various sizes with tailor-made options.
               </p>
               
               <div className="space-y-4 mb-8">
@@ -191,8 +191,8 @@ const Index = () => {
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-lg hidden md:block">
-                <div className="font-display text-2xl font-bold">ISO 9001</div>
-                <div className="text-sm">Certified Quality</div>
+                <div className="font-display text-2xl font-bold">GST Registered</div>
+                <div className="text-sm">Since 2000</div>
               </div>
             </div>
           </div>

@@ -53,10 +53,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                "Corrugated Boxes",
-                "Die-Cut Boxes",
-                "Printed Packaging",
-                "Custom Solutions",
+                "Corrugated Cardboard Boxes",
+                "Printed Corrugated Boxes",
+                "Fruits Corrugated Boxes",
+                "Duplex Printed Boxes",
+                "BOPP Tapes",
               ].map((product) => (
                 <li key={product}>
                   <Link
@@ -79,29 +80,42 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/70 text-sm">
-                  Industrial Area, Phase 2<br />
-                  Sector 15, New Delhi - 110001
+                  Plot No - 112, Ground Floor,<br />
+                  Udyog Kendra II, Greater Noida,<br />
+                  Gautam Buddha Nagar - 201310,<br />
+                  Uttar Pradesh, India
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-accent shrink-0" />
-                <a
-                  href="tel:+919876543210"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
-                >
-                  +91 98765 43210
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div className="text-primary-foreground/70 text-sm">
+                  <a
+                    href="tel:+919810504174"
+                    className="hover:text-accent transition-colors block"
+                  >
+                    +91 9810504174
+                  </a>
+                  <a
+                    href="tel:+919911194174"
+                    className="hover:text-accent transition-colors block"
+                  >
+                    +91 9911194174
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
                 <a
-                  href="mailto:info@mrenterprises.com"
+                  href="mailto:mrenterprises2000@gmail.com"
                   className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
-                  info@mrenterprises.com
+                  mrenterprises2000@gmail.com
                 </a>
               </li>
             </ul>
+            <p className="text-primary-foreground/50 text-xs mt-4">
+              Hours: 9:00 - 20:00, Mon - Sat
+            </p>
           </div>
         </div>
 

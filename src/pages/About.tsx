@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Target, Award, Factory } from "lucide-react";
+import { ArrowRight, Users, Target, Award, Factory, Building2, BadgeCheck, Truck, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 
@@ -7,17 +7,17 @@ const values = [
   {
     icon: Target,
     title: "Quality First",
-    description: "We never compromise on quality. Every box we produce undergoes rigorous testing.",
+    description: "We never compromise on quality. Every product undergoes rigorous testing.",
   },
   {
     icon: Users,
     title: "Customer Focus",
-    description: "Your success is our priority. We work closely with you to meet your exact needs.",
+    description: "Your success is our priority. We work closely to meet your exact needs.",
   },
   {
     icon: Award,
     title: "Innovation",
-    description: "Continuous improvement in processes and materials keeps us at the forefront.",
+    description: "Continuous improvement in processes and materials keeps us ahead.",
   },
   {
     icon: Factory,
@@ -26,12 +26,33 @@ const values = [
   },
 ];
 
-const milestones = [
-  { year: "1998", event: "MR Enterprises founded with a single corrugation line" },
-  { year: "2005", event: "Expanded to 10,000 sq ft manufacturing facility" },
-  { year: "2012", event: "Achieved ISO 9001:2008 certification" },
-  { year: "2018", event: "Installed state-of-the-art automated production line" },
-  { year: "2023", event: "Serving 500+ clients across multiple industries" },
+const clients = [
+  "LG",
+  "DS Group",
+  "Frank Brothers",
+  "Macmillan",
+];
+
+const companyInfo = [
+  { label: "Nature of Business", value: "Manufacturer" },
+  { label: "Additional Business", value: "Factory/Manufacturing" },
+  { label: "Company CEO", value: "Raghvendra Varshney" },
+  { label: "Total Employees", value: "26 to 50 People" },
+  { label: "Established", value: "2000" },
+  { label: "Legal Status", value: "Proprietorship" },
+  { label: "Annual Turnover", value: "5 - 25 Cr" },
+  { label: "GST No.", value: "09ABRPV1756E1Z4" },
+  { label: "Payment Mode", value: "Cash, Cheque, DD" },
+  { label: "Shipment Mode", value: "By Road" },
+];
+
+const companyUSP = [
+  "Primary Competitive Advantage",
+  "Experienced R & D Department",
+  "Good Financial Position & TQM",
+  "Large Production Capacity",
+  "Provide Customized Solutions",
+  "Quality Measures / Testing Facilities",
 ];
 
 const About = () => {
@@ -42,10 +63,10 @@ const About = () => {
         <div className="container-wide">
           <div className="max-w-3xl">
             <h1 className="heading-display mb-6 opacity-0 animate-fade-in">
-              Building Trust Through Quality Packaging
+              Who We Are?
             </h1>
             <p className="text-body-large opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              For over 25 years, MR Enterprises has been a trusted name in corrugated packaging. We combine traditional craftsmanship with modern technology to deliver exceptional products.
+              <strong>M. R. Enterprises</strong> was established in the year <strong>2000</strong>. With over two decades of experience, we have carved a niche in this industry with our superior quality Corrugated Packaging Boxes and Tapes.
             </p>
           </div>
         </div>
@@ -54,35 +75,56 @@ const About = () => {
       {/* Story Section */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="heading-section mb-6">Our Story</h2>
+              <h2 className="heading-section mb-6">Our Products</h2>
               <div className="space-y-4 text-body">
                 <p>
-                  Founded in 1998, MR Enterprises began as a small family-owned business with a single corrugation machine and a commitment to quality. Our founder recognized the growing need for reliable packaging solutions in the manufacturing sector.
+                  We specialize in manufacturing a wide range of superior quality products including:
                 </p>
-                <p>
-                  Over the decades, we've grown into a full-scale packaging manufacturer, serving clients across industries including electronics, FMCG, automotive, and e-commerce. Our state-of-the-art facility now houses multiple production lines capable of producing millions of boxes annually.
-                </p>
-                <p>
-                  Despite our growth, we've never lost sight of our core values: quality, reliability, and customer satisfaction. Every team member shares our commitment to excellence.
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-muted-foreground">
+                  {[
+                    "Corrugated Boxes",
+                    "Duplex Printed Corrugated Boxes",
+                    "Fruits Corrugated Boxes",
+                    "5 Ply Corrugated Box",
+                    "Printed Corrugated Boxes",
+                    "Corrugated Cardboard Boxes",
+                    "Packaging Corrugated Boxes",
+                    "Packing Boxes",
+                    "Corrugated Shipping Boxes",
+                    "Carton Box",
+                    "Corrugated Roll",
+                    "BOPP Tapes",
+                    "BOPP Adhesive Tapes",
+                    "Paper Roll",
+                  ].map((product) => (
+                    <li key={product} className="flex items-center gap-2">
+                      <BadgeCheck className="w-4 h-4 text-accent shrink-0" />
+                      <span>{product}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4">
+                  These boxes and tapes are available in various sizes. We also undertake tailor-made orders as per specific requirements.
                 </p>
               </div>
             </div>
 
             <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-lg">
-              <h3 className="heading-card text-primary-foreground mb-8">Our Journey</h3>
-              <div className="space-y-6">
-                {milestones.map((milestone, index) => (
+              <h3 className="heading-card text-primary-foreground mb-8">Our Valued Clientele</h3>
+              <p className="text-primary-foreground/80 mb-6">
+                We are a client-oriented organization strongly focused on providing superior quality products that exceed expectations. Our products are manufactured using high-grade raw materials and advanced tools & technology.
+              </p>
+              <div className="space-y-4">
+                {clients.map((client, index) => (
                   <div
-                    key={milestone.year}
-                    className="flex gap-4 opacity-0 animate-fade-in"
+                    key={client}
+                    className="flex items-center gap-4 opacity-0 animate-fade-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="font-display font-bold text-accent text-lg w-16 shrink-0">
-                      {milestone.year}
-                    </div>
-                    <div className="text-primary-foreground/80">{milestone.event}</div>
+                    <Building2 className="w-5 h-5 text-accent shrink-0" />
+                    <span className="text-lg font-semibold">{client}</span>
                   </div>
                 ))}
               </div>
@@ -119,45 +161,41 @@ const About = () => {
         </div>
       </section>
 
-      {/* Facility Section */}
+      {/* Company Information Section */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-kraft-light p-6 rounded-lg text-center">
-                  <div className="font-display text-3xl font-bold text-accent mb-1">25,000</div>
-                  <div className="text-sm text-muted-foreground">Sq. Ft. Facility</div>
-                </div>
-                <div className="bg-kraft-light p-6 rounded-lg text-center">
-                  <div className="font-display text-3xl font-bold text-accent mb-1">150+</div>
-                  <div className="text-sm text-muted-foreground">Skilled Workers</div>
-                </div>
-                <div className="bg-kraft-light p-6 rounded-lg text-center">
-                  <div className="font-display text-3xl font-bold text-accent mb-1">5</div>
-                  <div className="text-sm text-muted-foreground">Production Lines</div>
-                </div>
-                <div className="bg-kraft-light p-6 rounded-lg text-center">
-                  <div className="font-display text-3xl font-bold text-accent mb-1">24/7</div>
-                  <div className="text-sm text-muted-foreground">Operations</div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="heading-section mb-6">Basic Information</h2>
+              <div className="bg-secondary rounded-lg p-6 md:p-8">
+                <div className="space-y-4">
+                  {companyInfo.map((info, index) => (
+                    <div
+                      key={info.label}
+                      className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 py-2 border-b border-border last:border-0"
+                    >
+                      <span className="font-semibold text-foreground min-w-[160px]">{info.label}:</span>
+                      <span className="text-muted-foreground">{info.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="order-1 lg:order-2">
-              <h2 className="heading-section mb-6">Modern Manufacturing Facility</h2>
-              <p className="text-body mb-6">
-                Our manufacturing facility is equipped with cutting-edge machinery including automated corrugation lines, precision die-cutting equipment, and high-quality printing systems.
-              </p>
-              <p className="text-body mb-6">
-                We maintain strict quality control measures at every stage of production, from raw material inspection to final product packaging.
-              </p>
-              <Button variant="kraft" asChild>
-                <Link to="/contact">
-                  Schedule a Visit
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
+            <div>
+              <h2 className="heading-section mb-6">Company USP</h2>
+              <div className="grid grid-cols-1 gap-4">
+                {companyUSP.map((usp, index) => (
+                  <div
+                    key={usp}
+                    className="flex items-center gap-4 p-4 bg-kraft-light rounded-lg opacity-0 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <Settings className="w-5 h-5 text-accent shrink-0" />
+                    <span className="font-medium">{usp}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -166,7 +204,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="bg-primary text-primary-foreground section-padding">
         <div className="container-wide text-center">
-          <h2 className="heading-section text-primary-foreground mb-4">Partner With Us</h2>
+          <h2 className="heading-section text-primary-foreground mb-4">Packaging Redefined Since 2000</h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto mb-8">
             Join hundreds of businesses that trust MR Enterprises for their packaging needs. Let's discuss how we can help you.
           </p>
