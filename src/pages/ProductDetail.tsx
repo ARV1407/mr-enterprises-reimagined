@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle, Phone } from "lucide-react";
+import { ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import boxesImage from "@/assets/boxes-closeup.jpg";
@@ -7,96 +7,63 @@ import boxesImage from "@/assets/boxes-closeup.jpg";
 const productData: Record<string, {
   name: string;
   description: string;
-  longDescription: string;
-  specifications: string[];
-  applications: string[];
-  features: string[];
 }> = {
-  "corrugated-boxes": {
-    name: "Corrugated Boxes",
-    description: "Standard and heavy-duty corrugated shipping boxes",
-    longDescription: "Our corrugated boxes are manufactured using high-quality kraft paper and advanced corrugation technology. Available in 3-ply, 5-ply, and 7-ply configurations to meet various strength requirements. Perfect for shipping, storage, and product protection.",
-    specifications: [
-      "Material: Virgin Kraft / Recycled Kraft",
-      "Flute Types: A, B, C, E, BC, EB",
-      "GSM Range: 100-300 GSM",
-      "Bursting Strength: 8-25 kg/cm²",
-      "Custom sizes available",
-    ],
-    applications: ["Shipping & Logistics", "Warehousing", "E-commerce", "Manufacturing", "Retail Distribution"],
-    features: ["High stacking strength", "Moisture resistant options", "Eco-friendly materials", "Cost-effective", "Fully recyclable"],
+  "corrugated-cardboard-boxes": {
+    name: "Corrugated Cardboard Boxes",
+    description: "We have specialized in offering a variety of Corrugated Cardboard Boxes. We do not compromise on the fine quality of these boxes since they are the most preferred storage options for many products of our customers. The Corrugated Card Board Sheets is a paper-based material consisting of a fluted corrugated sheet and one or two flat liner boards. Client can avail these boxes at market leading price. Our range of packaging materials cater to the requirements of host of industries and satiates the need for durable packaging. These packaging materials can be availed from us at industry leading prices.",
   },
-  "die-cut-boxes": {
-    name: "Die-Cut Boxes",
-    description: "Precision-cut boxes for retail and display",
-    longDescription: "Die-cut boxes offer superior precision and aesthetic appeal, making them ideal for retail packaging, product displays, and gift packaging. Our advanced die-cutting machinery ensures clean cuts and consistent quality across large production runs.",
-    specifications: [
-      "Precision tolerance: ±0.5mm",
-      "Material: White/Brown Kraft",
-      "GSM Range: 150-350 GSM",
-      "Custom die development available",
-      "Minimum order: 1000 units",
-    ],
-    applications: ["Retail Packaging", "Gift Boxes", "Product Displays", "Cosmetics", "Electronics"],
-    features: ["Clean precise cuts", "Custom shapes", "Easy assembly", "Premium finish options", "Point-of-sale ready"],
+  "printed-corrugated-boxes": {
+    name: "Printed Corrugated Boxes",
+    description: "We offer high-quality Printed Corrugated Boxes with custom branding options. Our printing capabilities include flexographic and offset printing to bring your brand to life. These boxes are perfect for retail packaging, brand recognition, and marketing purposes. Available in various sizes and configurations to meet your specific packaging needs.",
   },
-  "printed-packaging": {
-    name: "Printed Packaging",
-    description: "Custom branded packaging solutions",
-    longDescription: "Elevate your brand with custom printed packaging. We offer high-quality flexographic and offset printing on corrugated materials. From simple one-color logos to full-color photographic prints, we bring your vision to life.",
-    specifications: [
-      "Print type: Flexographic / Offset",
-      "Colors: Up to 6 colors",
-      "Coverage: Full-box or partial",
-      "Coating: Gloss / Matte / UV available",
-      "Design assistance available",
-    ],
-    applications: ["Brand Packaging", "Marketing Materials", "Subscription Boxes", "Premium Products", "Corporate Gifting"],
-    features: ["Vibrant color reproduction", "Consistent print quality", "Water-based eco-inks", "Lamination options", "Brand recognition"],
+  "fruits-corrugated-boxes": {
+    name: "Fruits Corrugated Boxes",
+    description: "Specially designed Fruits Corrugated Boxes that provide excellent ventilation and protection for fresh produce. These boxes are engineered to maintain the freshness of fruits during storage and transportation. Available with custom ventilation patterns and sizes to accommodate different fruit types and quantities.",
   },
-  "industrial-packaging": {
-    name: "Industrial Packaging",
-    description: "Heavy-duty packaging for machinery",
-    longDescription: "Our industrial packaging solutions are engineered to protect heavy machinery, equipment, and industrial products during transit and storage. Built with extra-strength materials and designed for maximum protection.",
-    specifications: [
-      "Material: Heavy-duty 7-ply / 9-ply",
-      "Edge Crush Test: 23-71 ECT",
-      "Static load capacity: Up to 500 kg",
-      "Custom crating available",
-      "Export-grade options",
-    ],
-    applications: ["Machinery Shipping", "Auto Parts", "Industrial Equipment", "Export Packaging", "Heavy Components"],
-    features: ["Maximum protection", "Reinforced corners", "Moisture barriers", "Shock absorption", "Stackable design"],
+  "duplex-printed-boxes": {
+    name: "Duplex Printed Boxes",
+    description: "Premium Duplex Printed Boxes offering superior print quality and structural strength. These boxes feature high-quality printing on duplex board material, making them ideal for premium product packaging. Perfect for cosmetics, pharmaceuticals, food products, and retail applications.",
   },
-  "ecommerce-packaging": {
-    name: "E-commerce Packaging",
-    description: "Lightweight packaging for online retail",
-    longDescription: "Designed specifically for the e-commerce industry, our packaging solutions combine protection, sustainability, and branded unboxing experiences. Lightweight yet durable, perfect for reducing shipping costs.",
-    specifications: [
-      "Material: Lightweight corrugated",
-      "Self-sealing options available",
-      "Tamper-evident designs",
-      "Easy-open/easy-return features",
-      "Custom sizes available",
-    ],
-    applications: ["Online Retail", "Subscription Services", "Direct-to-Consumer", "Fulfillment Centers", "Dropshipping"],
-    features: ["Easy seal & open", "Return-friendly", "Branded experience", "Reduced weight", "Sustainable materials"],
+  "packaging-corrugated-boxes": {
+    name: "Packaging Corrugated Boxes",
+    description: "Versatile Packaging Corrugated Boxes suitable for a wide range of applications. These boxes are manufactured using high-grade corrugated materials to ensure maximum protection during transit and storage. Available in various ply configurations to meet different strength requirements.",
   },
-  "food-grade-packaging": {
-    name: "Food-Grade Packaging",
-    description: "FDA-compliant food packaging",
-    longDescription: "Our food-grade packaging solutions meet strict FDA and FSSAI compliance standards. Perfect for bakeries, restaurants, food manufacturers, and FMCG companies requiring safe, hygienic packaging.",
-    specifications: [
-      "Compliance: FDA / FSSAI approved",
-      "Material: Food-safe virgin kraft",
-      "Grease-resistant coatings available",
-      "Temperature range: -40°C to 70°C",
-      "Microwave-safe options",
-    ],
-    applications: ["Bakery Products", "Frozen Foods", "Fast Food", "Confectionery", "Meal Kits"],
-    features: ["Food-safe materials", "Grease resistant", "Odor barrier", "Temperature stable", "Hygienic production"],
+  "packing-boxes": {
+    name: "Packing Boxes",
+    description: "General purpose Packing Boxes designed for everyday packaging needs. These boxes offer excellent value without compromising on quality. Ideal for shipping, moving, storage, and general packaging applications. Available in standard and custom sizes.",
+  },
+  "5-ply-boxes": {
+    name: "5 Ply Boxes",
+    description: "Heavy-duty 5 Ply Boxes engineered for maximum strength and durability. These boxes feature five layers of corrugated material, providing superior protection for heavy or delicate items. Ideal for industrial packaging, machinery, electronics, and export-grade requirements.",
+  },
+  "carton-boxes": {
+    name: "Carton Boxes",
+    description: "Standard Carton Boxes manufactured to meet diverse packaging requirements. These boxes are versatile, cost-effective, and suitable for various industries including FMCG, retail, e-commerce, and manufacturing. Available in multiple sizes and can be customized per requirements.",
+  },
+  "bopp-adhesive-tapes": {
+    name: "BOPP Adhesive Tapes",
+    description: "High-quality BOPP Adhesive Tapes with excellent adhesion properties. These tapes are manufactured using premium quality BOPP film with acrylic-based adhesive coating. Ideal for carton sealing, packaging, and general purpose applications. Available in various widths and lengths.",
+  },
+  "bopp-tapes": {
+    name: "BOPP Tapes",
+    description: "Premium BOPP Tapes offering superior performance for packaging applications. Our BOPP tapes feature strong adhesion, excellent clarity, and consistent quality. Available in clear, brown, and custom printed options. Perfect for carton sealing and bundling applications.",
+  },
+  "corrugated-roll": {
+    name: "Corrugated Roll",
+    description: "Flexible Corrugated Roll material for protective packaging applications. These rolls provide cushioning and protection for fragile items during transit. Easy to use, cut, and wrap around products of various shapes and sizes. Ideal for void filling, wrapping, and surface protection.",
+  },
+  "paper-roll": {
+    name: "Paper Roll",
+    description: "Quality Paper Roll products for various packaging and industrial applications. Our paper rolls are manufactured using high-grade kraft paper with consistent thickness and strength. Ideal for wrapping, interleaving, and general packaging purposes. Available in various GSM options and widths.",
   },
 };
+
+const featuredProducts = [
+  { name: "Corrugated Cardboard Boxes", slug: "corrugated-cardboard-boxes" },
+  { name: "Printed Corrugated Boxes", slug: "printed-corrugated-boxes" },
+  { name: "Fruits Corrugated Boxes", slug: "fruits-corrugated-boxes" },
+  { name: "Duplex Printed Boxes", slug: "duplex-printed-boxes" },
+];
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -131,10 +98,11 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      {/* Product Header */}
+      {/* Product Details */}
       <section className="section-padding">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12">
+            {/* Product Image */}
             <div className="opacity-0 animate-fade-in">
               <img
                 src={boxesImage}
@@ -143,28 +111,18 @@ const ProductDetail = () => {
               />
             </div>
 
+            {/* Product Info */}
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <h1 className="heading-display mb-4">{product.name}</h1>
-              <p className="text-body-large mb-6">{product.longDescription}</p>
-
-              <div className="mb-8">
-                <h3 className="font-display font-semibold text-lg mb-3">Key Features</h3>
-                <ul className="space-y-2">
-                  {product.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                      <span className="text-body">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h2 className="font-display font-semibold text-xl text-accent mb-4">Product Details</h2>
+              <p className="text-body-large mb-8 leading-relaxed">{product.description}</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="kraft" size="lg" asChild>
                   <Link to="/contact">Request Quote</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="tel:+919876543210">
+                  <a href="tel:+919810504174">
                     <Phone className="w-4 h-4" />
                     Call Us
                   </a>
@@ -175,38 +133,32 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Specifications */}
+      {/* Featured Products */}
       <section className="bg-secondary section-padding">
         <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="heading-section mb-6">Specifications</h2>
-              <ul className="space-y-3">
-                {product.specifications.map((spec) => (
-                  <li
-                    key={spec}
-                    className="flex items-start gap-3 p-4 bg-background rounded-lg"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
-                    <span className="text-body">{spec}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="heading-section mb-6">Applications</h2>
-              <div className="flex flex-wrap gap-3">
-                {product.applications.map((app) => (
-                  <span
-                    key={app}
-                    className="px-4 py-2 bg-kraft-light text-foreground rounded-full text-sm font-medium"
-                  >
-                    {app}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <h2 className="heading-section mb-8">Featured Products</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {featuredProducts.map((item, index) => (
+              <Link
+                key={item.slug}
+                to={`/products/${item.slug}`}
+                className="group bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="aspect-square overflow-hidden bg-secondary">
+                  <img
+                    src={boxesImage}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-display font-semibold text-sm group-hover:text-accent transition-colors line-clamp-2">
+                    {item.name}
+                  </h3>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
