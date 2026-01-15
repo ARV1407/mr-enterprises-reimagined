@@ -5,40 +5,52 @@ import boxesImage from "@/assets/boxes-closeup.jpg";
 
 const productCategories = [
   {
-    name: "Corrugated Boxes",
-    slug: "corrugated-boxes",
-    description: "Standard and heavy-duty corrugated shipping boxes available in all sizes.",
-    features: ["3-ply, 5-ply, 7-ply options", "Custom sizes available", "Bulk order discounts"],
+    name: "Corrugated Cardboard Boxes",
+    slug: "corrugated-cardboard-boxes",
   },
   {
-    name: "Die-Cut Boxes",
-    slug: "die-cut-boxes",
-    description: "Precision die-cut boxes perfect for retail packaging and displays.",
-    features: ["Custom shapes & designs", "Retail-ready packaging", "Display solutions"],
+    name: "Printed Corrugated Boxes",
+    slug: "printed-corrugated-boxes",
   },
   {
-    name: "Printed Packaging",
-    slug: "printed-packaging",
-    description: "Custom branded packaging with high-quality printing options.",
-    features: ["Flexographic printing", "Full-color branding", "Logo & design placement"],
+    name: "Fruits Corrugated Boxes",
+    slug: "fruits-corrugated-boxes",
   },
   {
-    name: "Industrial Packaging",
-    slug: "industrial-packaging",
-    description: "Heavy-duty packaging solutions for machinery and industrial products.",
-    features: ["Extra-strength materials", "Custom crating", "Export-grade packaging"],
+    name: "Duplex Printed Boxes",
+    slug: "duplex-printed-boxes",
   },
   {
-    name: "E-commerce Packaging",
-    slug: "ecommerce-packaging",
-    description: "Lightweight, protective packaging designed for online retail.",
-    features: ["Easy-seal designs", "Return-friendly", "Branded unboxing experience"],
+    name: "Packaging Corrugated Boxes",
+    slug: "packaging-corrugated-boxes",
   },
   {
-    name: "Food-Grade Packaging",
-    slug: "food-grade-packaging",
-    description: "FDA-compliant packaging solutions for food and beverage products.",
-    features: ["Food-safe materials", "Grease-resistant options", "Temperature protection"],
+    name: "Packing Boxes",
+    slug: "packing-boxes",
+  },
+  {
+    name: "5 Ply Boxes",
+    slug: "5-ply-boxes",
+  },
+  {
+    name: "Carton Boxes",
+    slug: "carton-boxes",
+  },
+  {
+    name: "BOPP Adhesive Tapes",
+    slug: "bopp-adhesive-tapes",
+  },
+  {
+    name: "BOPP Tapes",
+    slug: "bopp-tapes",
+  },
+  {
+    name: "Corrugated Roll",
+    slug: "corrugated-roll",
+  },
+  {
+    name: "Paper Roll",
+    slug: "paper-roll",
   },
 ];
 
@@ -62,35 +74,26 @@ const Products = () => {
       {/* Products Grid */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {productCategories.map((product, index) => (
               <Link
                 key={product.slug}
                 to={`/products/${product.slug}`}
                 className="group bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                <div className="aspect-square overflow-hidden bg-secondary">
                   <img
                     src={boxesImage}
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="heading-card mb-2 group-hover:text-accent transition-colors">
+                <div className="p-4">
+                  <h3 className="font-display font-semibold text-sm md:text-base mb-2 group-hover:text-accent transition-colors line-clamp-2">
                     {product.name}
                   </h3>
-                  <p className="text-body text-sm mb-4">{product.description}</p>
-                  <ul className="space-y-1 mb-4">
-                    {product.features.map((feature) => (
-                      <li key={feature} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center gap-2 text-accent font-medium text-sm">
+                  <div className="flex items-center gap-1 text-accent font-medium text-sm">
                     View Details
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

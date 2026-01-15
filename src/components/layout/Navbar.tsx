@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Package } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/mr-enterprises-logo.jpg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -21,10 +22,12 @@ const Navbar = () => {
       <nav className="container-wide">
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded bg-primary text-primary-foreground">
-              <Package className="w-6 h-6" />
-            </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src={logo} 
+              alt="MR Enterprises" 
+              className="h-12 md:h-14 w-auto"
+            />
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg leading-tight text-foreground">
                 MR Enterprises
