@@ -1,56 +1,81 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import boxesImage from "@/assets/boxes-closeup.jpg";
+
+// Import product images
+import corrugatedBoxesImg from "@/assets/products/corrugated-boxes.jpg";
+import printedBoxesImg from "@/assets/products/printed-boxes.jpg";
+import fruitsBoxesImg from "@/assets/products/fruits-boxes.jpg";
+import duplexBoxesImg from "@/assets/products/duplex-boxes.jpg";
+import packagingBoxesImg from "@/assets/products/packaging-boxes.jpg";
+import packingBoxesImg from "@/assets/products/packing-boxes.jpg";
+import fivePlyBoxesImg from "@/assets/products/5-ply-boxes.jpg";
+import cartonBoxesImg from "@/assets/products/carton-boxes.jpg";
+import boppAdhesiveTapesImg from "@/assets/products/bopp-adhesive-tapes.jpg";
+import boppTapesImg from "@/assets/products/bopp-tapes.jpg";
+import corrugatedRollImg from "@/assets/products/corrugated-roll.jpg";
+import paperRollImg from "@/assets/products/paper-roll.jpg";
 
 const productCategories = [
   {
     name: "Corrugated Cardboard Boxes",
     slug: "corrugated-cardboard-boxes",
+    image: corrugatedBoxesImg,
   },
   {
     name: "Printed Corrugated Boxes",
     slug: "printed-corrugated-boxes",
+    image: printedBoxesImg,
   },
   {
     name: "Fruits Corrugated Boxes",
     slug: "fruits-corrugated-boxes",
+    image: fruitsBoxesImg,
   },
   {
     name: "Duplex Printed Boxes",
     slug: "duplex-printed-boxes",
+    image: duplexBoxesImg,
   },
   {
     name: "Packaging Corrugated Boxes",
     slug: "packaging-corrugated-boxes",
+    image: packagingBoxesImg,
   },
   {
     name: "Packing Boxes",
     slug: "packing-boxes",
+    image: packingBoxesImg,
   },
   {
     name: "5 Ply Boxes",
     slug: "5-ply-boxes",
+    image: fivePlyBoxesImg,
   },
   {
     name: "Carton Boxes",
     slug: "carton-boxes",
+    image: cartonBoxesImg,
   },
   {
     name: "BOPP Adhesive Tapes",
     slug: "bopp-adhesive-tapes",
+    image: boppAdhesiveTapesImg,
   },
   {
     name: "BOPP Tapes",
     slug: "bopp-tapes",
+    image: boppTapesImg,
   },
   {
     name: "Corrugated Roll",
     slug: "corrugated-roll",
+    image: corrugatedRollImg,
   },
   {
     name: "Paper Roll",
     slug: "paper-roll",
+    image: paperRollImg,
   },
 ];
 
@@ -84,7 +109,7 @@ const Products = () => {
               >
                 <div className="aspect-square overflow-hidden bg-secondary">
                   <img
-                    src={boxesImage}
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

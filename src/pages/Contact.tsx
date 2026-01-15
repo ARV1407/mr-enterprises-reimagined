@@ -10,22 +10,27 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Industrial Area, Phase 2", "Sector 15, New Delhi - 110001"],
+    details: [
+      "Plot No - 112, Ground Floor,",
+      "Udyog Kendra II, Greater Noida,",
+      "Gautam Buddha Nagar - 201310,",
+      "Uttar Pradesh, India"
+    ],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210", "+91 11-4567-8900"],
+    details: ["+91 9810504174", "+91 9911194174"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@mrenterprises.com", "sales@mrenterprises.com"],
+    details: ["mrenterprises2000@gmail.com"],
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Mon - Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"],
+    details: ["Mon - Sat: 9:00 AM - 8:00 PM", "Sunday: Closed"],
   },
 ];
 
@@ -97,7 +102,7 @@ const Contact = () => {
                       name="name"
                       type="text"
                       required
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
                       className="h-12"
@@ -112,7 +117,7 @@ const Contact = () => {
                       name="email"
                       type="email"
                       required
-                      placeholder="john@company.com"
+                      placeholder="you@company.com"
                       value={formData.email}
                       onChange={handleChange}
                       className="h-12"
@@ -129,7 +134,7 @@ const Contact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 98105 04174"
                       value={formData.phone}
                       onChange={handleChange}
                       className="h-12"
@@ -209,33 +214,48 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 bg-secondary rounded-lg p-6 text-center">
-                <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
-                <p className="text-muted-foreground text-sm">
-                  Interactive map coming soon.<br />
-                  Get directions via Google Maps.
-                </p>
+              {/* Google Maps Embed */}
+              <div className="mt-8 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2034694982604!2d77.50494217549825!3d28.474399175742756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea64ffffffff%3A0x1c7bbd40e9c5e43a!2sUdyog%20Kendra%20II!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="MR Enterprises Location"
+                  className="rounded-lg"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ CTA */}
+      {/* Quick Inquiry CTA */}
       <section className="bg-kraft-light section-padding">
         <div className="container-wide text-center">
           <h2 className="heading-section mb-4">Quick Inquiry?</h2>
           <p className="text-body-large max-w-2xl mx-auto mb-6">
             For urgent requirements or quick questions, feel free to call us directly.
           </p>
-          <a
-            href="tel:+919876543210"
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-md font-semibold hover:bg-accent/90 transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            +91 98765 43210
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+919810504174"
+              className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-md font-semibold hover:bg-accent/90 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              +91 9810504174
+            </a>
+            <a
+              href="tel:+919911194174"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold hover:bg-primary/90 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              +91 9911194174
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
