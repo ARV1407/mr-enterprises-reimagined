@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Package, Truck, Shield, CheckCircle } from "lucide-react";
+import logoImage from "@/assets/mr-enterprises-logo.jpg";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroImage from "@/assets/hero-warehouse.jpg";
@@ -68,7 +69,7 @@ const Index = () => {
         <div className="container-wide relative z-10">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-accent-foreground rounded-full mb-6 animate-fade-in">
-              <Package className="w-4 h-4 text-accent" />
+              <img src={logoImage} alt="MR Enterprises" className="w-6 h-6 rounded-full object-cover" />
               <span className="text-sm font-medium text-primary-foreground">
                 Packaging Redefined Since 2000
               </span>
