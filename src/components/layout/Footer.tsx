@@ -1,45 +1,69 @@
 import { Link } from "react-router-dom";
-import { Package, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import logo from "@/assets/mr-enterprises-logo.jpg";
+
+const quickLinks = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Products", path: "/products" },
+  { name: "Contact", path: "/contact" },
+];
+
+const products = [
+  { name: "Corrugated Boxes", path: "/products/corrugated-cardboard-boxes" },
+  { name: "Printed Boxes", path: "/products/printed-corrugated-boxes" },
+  { name: "Fruits Boxes", path: "/products/fruits-corrugated-boxes" },
+  { name: "5 Ply Boxes", path: "/products/5-ply-boxes" },
+  { name: "BOPP Tapes", path: "/products/bopp-tapes" },
+];
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container-wide section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Main Footer */}
+      <div className="container-wide py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="flex items-center justify-center w-10 h-10 rounded bg-accent text-accent-foreground">
-                <Package className="w-6 h-6" />
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <img
+                src={logo}
+                alt="MR Enterprises"
+                className="h-12 w-auto rounded-lg"
+              />
+              <div>
+                <span className="font-display font-bold text-lg block">
+                  MR Enterprises
+                </span>
+                <span className="text-primary-foreground/60 text-xs">
+                  Since 2000
+                </span>
               </div>
-              <span className="font-display font-bold text-lg">
-                MR Enterprises
-              </span>
             </Link>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Leading manufacturer of corrugated boxes and packaging solutions.
-              Quality products, competitive pricing, and reliable delivery.
+            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
+              Leading manufacturer of premium corrugated packaging solutions.
+              Quality products, competitive pricing, and reliable delivery for
+              businesses across industries.
             </p>
+            <div className="flex items-center gap-2 text-accent text-sm font-medium">
+              <span>GST: 09ABRPV1756E1Z4</span>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-6">
+            <h4 className="font-display font-semibold text-base mb-6">
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About Us", path: "/about" },
-                { name: "Products", path: "/products" },
-                { name: "Contact", path: "/contact" },
-              ].map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {link.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </Link>
                 </li>
               ))}
@@ -48,58 +72,54 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-6">
-              Our Products
+            <h4 className="font-display font-semibold text-base mb-6">
+              Products
             </h4>
             <ul className="space-y-3">
-              {[
-                "Corrugated Cardboard Boxes",
-                "Printed Corrugated Boxes",
-                "Fruits Corrugated Boxes",
-                "Duplex Printed Boxes",
-                "BOPP Tapes",
-              ].map((product) => (
-                <li key={product}>
+              {products.map((product) => (
+                <li key={product.path}>
                   <Link
-                    to="/products"
-                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
+                    to={product.path}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm inline-flex items-center gap-1 group"
                   >
-                    {product}
+                    {product.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-6">
+            <h4 className="font-display font-semibold text-base mb-6">
               Contact Us
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/70 text-sm">
-                  Plot No - 112, Ground Floor,<br />
-                  Udyog Kendra II, Greater Noida,<br />
-                  Gautam Buddha Nagar - 201310,<br />
-                  Uttar Pradesh, India
+                <span className="text-primary-foreground/70 text-sm leading-relaxed">
+                  Plot No - 112, Ground Floor,
+                  <br />
+                  Udyog Kendra II, Greater Noida,
+                  <br />
+                  Gautam Buddha Nagar - 201310
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <div className="text-primary-foreground/70 text-sm">
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-accent shrink-0" />
+                <div className="text-sm">
                   <a
                     href="tel:+919810504174"
-                    className="hover:text-accent transition-colors block"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors block"
                   >
-                    +91 9810504174
+                    +91 98105 04174
                   </a>
                   <a
                     href="tel:+919911194174"
-                    className="hover:text-accent transition-colors block"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors block"
                   >
-                    +91 9911194174
+                    +91 99111 94174
                   </a>
                 </div>
               </li>
@@ -113,14 +133,16 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <p className="text-primary-foreground/50 text-xs mt-4">
-              Hours: 9:00 - 20:00, Mon - Sat
+            <p className="text-primary-foreground/50 text-xs mt-6">
+              Mon - Sat: 9:00 AM - 8:00 PM
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-primary-foreground/10">
+      {/* Bottom Bar */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/50 text-sm">
               © {new Date().getFullYear()} MR Enterprises. All rights reserved.

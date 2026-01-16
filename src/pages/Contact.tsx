@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,13 +16,13 @@ const contactInfo = [
       "Plot No - 112, Ground Floor,",
       "Udyog Kendra II, Greater Noida,",
       "Gautam Buddha Nagar - 201310,",
-      "Uttar Pradesh, India"
+      "Uttar Pradesh, India",
     ],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 9810504174", "+91 9911194174"],
+    details: ["+91 98105 04174", "+91 99111 94174"],
   },
   {
     icon: Mail,
@@ -47,7 +47,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -63,7 +65,8 @@ const Contact = () => {
 
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description:
+        "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
 
     setFormData({ name: "", email: "", phone: "", company: "", message: "" });
@@ -74,144 +77,151 @@ const Contact = () => {
     <Layout>
       <PageTransition>
         {/* Hero Section */}
-        <section className="bg-secondary section-padding">
+        <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-secondary">
           <div className="container-wide">
-            <div className="max-w-3xl">
-              <motion.h1 
-                className="heading-display mb-6"
-                initial={{ opacity: 0, y: 30 }}
+            <div className="max-w-4xl">
+              <motion.p
+                className="text-caption text-accent mb-4"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Get in Touch
-              </motion.h1>
-              <motion.p 
-                className="text-body-large"
+                Contact Us
+              </motion.p>
+              <motion.h1
+                className="heading-hero mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
               >
-                Have questions about our products or need a custom quote? Our team is here to help. Reach out and we'll respond within 24 hours.
+                Let's Start a{" "}
+                <span className="text-accent">Conversation</span>
+              </motion.h1>
+              <motion.p
+                className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+              >
+                Have questions about our products or need a custom quote? Our
+                team is here to help. Reach out and we'll respond within 24
+                hours.
               </motion.p>
             </div>
           </div>
         </section>
 
         {/* Contact Content */}
-        <section className="section-padding">
+        <section className="section-padding bg-background">
           <div className="container-wide">
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
               {/* Contact Form */}
-              <ScrollReveal direction="left" className="lg:col-span-2">
-                <h2 className="heading-section mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Full Name *
+              <ScrollReveal direction="left" className="lg:col-span-3">
+                <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm">
+                  <h2 className="heading-card mb-2">Send Us a Message</h2>
+                  <p className="text-muted-foreground mb-8">
+                    Fill out the form below and we'll get back to you shortly.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Full Name <span className="text-accent">*</span>
+                        </label>
+                        <Input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="h-12 bg-background"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Email Address <span className="text-accent">*</span>
+                        </label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="you@company.com"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="h-12 bg-background"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Phone Number
+                        </label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          placeholder="+91 98105 04174"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="h-12 bg-background"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="company"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Company Name
+                        </label>
+                        <Input
+                          id="company"
+                          name="company"
+                          type="text"
+                          placeholder="Your Company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="h-12 bg-background"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium mb-2"
+                      >
+                        Message <span className="text-accent">*</span>
                       </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
+                      <Textarea
+                        id="message"
+                        name="message"
                         required
-                        placeholder="Your Name"
-                        value={formData.name}
+                        placeholder="Tell us about your packaging requirements..."
+                        value={formData.message}
                         onChange={handleChange}
-                        className="h-12"
+                        rows={6}
+                        className="bg-background resize-none"
                       />
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.25 }}
-                    >
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email Address *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="you@company.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="h-12"
-                      />
-                    </motion.div>
-                  </div>
+                    </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+91 98105 04174"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="h-12"
-                      />
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.35 }}
-                    >
-                      <label htmlFor="company" className="block text-sm font-medium mb-2">
-                        Company Name
-                      </label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        placeholder="Your Company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="h-12"
-                      />
-                    </motion.div>
-                  </div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      placeholder="Tell us about your packaging requirements..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={6}
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.45 }}
-                  >
                     <Button
                       type="submit"
-                      variant="kraft"
+                      variant="accent"
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full md:w-auto"
@@ -225,36 +235,45 @@ const Contact = () => {
                         </>
                       )}
                     </Button>
-                  </motion.div>
-                </form>
+                  </form>
+                </div>
               </ScrollReveal>
 
               {/* Contact Info */}
-              <ScrollReveal direction="right" delay={0.2}>
-                <h2 className="heading-section mb-6">Contact Information</h2>
-                <StaggerContainer className="space-y-6" staggerDelay={0.1}>
+              <ScrollReveal direction="right" delay={0.2} className="lg:col-span-2">
+                <p className="text-caption text-accent mb-4">Get in Touch</p>
+                <h2 className="heading-card mb-8">Contact Information</h2>
+
+                <StaggerContainer className="space-y-4" staggerDelay={0.1}>
                   {contactInfo.map((info) => (
                     <StaggerItem key={info.title}>
-                      <div className="flex gap-4 p-4 bg-secondary rounded-lg">
-                        <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                          <info.icon className="w-6 h-6 text-accent" />
+                      <motion.div
+                        className="flex gap-4 p-5 bg-secondary rounded-xl"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                          <info.icon className="w-5 h-5 text-accent" />
                         </div>
                         <div>
                           <h3 className="font-semibold mb-1">{info.title}</h3>
                           {info.details.map((detail) => (
-                            <p key={detail} className="text-sm text-muted-foreground">
+                            <p
+                              key={detail}
+                              className="text-sm text-muted-foreground"
+                            >
                               {detail}
                             </p>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
                     </StaggerItem>
                   ))}
                 </StaggerContainer>
 
-                {/* Google Maps Embed */}
-                <motion.div 
-                  className="mt-8 rounded-lg overflow-hidden"
+                {/* Map */}
+                <motion.div
+                  className="mt-8 rounded-xl overflow-hidden shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -269,7 +288,7 @@ const Contact = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="MR Enterprises Location"
-                    className="rounded-lg"
+                    className="rounded-xl"
                   />
                 </motion.div>
               </ScrollReveal>
@@ -277,34 +296,32 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Quick Inquiry CTA */}
-        <section className="bg-kraft-light section-padding">
-          <ScrollReveal className="container-wide text-center">
-            <h2 className="heading-section mb-4">Quick Inquiry?</h2>
-            <p className="text-body-large max-w-2xl mx-auto mb-6">
-              For urgent requirements or quick questions, feel free to call us directly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="tel:+919810504174"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-md font-semibold hover:bg-accent/90 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Phone className="w-5 h-5" />
-                +91 9810504174
-              </motion.a>
-              <motion.a
-                href="tel:+919911194174"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold hover:bg-primary/90 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Phone className="w-5 h-5" />
-                +91 9911194174
-              </motion.a>
-            </div>
-          </ScrollReveal>
+        {/* Quick Call CTA */}
+        <section className="section-padding-sm bg-kraft-light">
+          <div className="container-wide">
+            <ScrollReveal className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+              <div>
+                <h2 className="heading-card mb-2">Quick Inquiry?</h2>
+                <p className="text-muted-foreground">
+                  For urgent requirements, feel free to call us directly.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="accent" size="lg" asChild>
+                  <a href="tel:+919810504174">
+                    <Phone className="w-4 h-4" />
+                    +91 98105 04174
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="tel:+919911194174">
+                    <Phone className="w-4 h-4" />
+                    +91 99111 94174
+                  </a>
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
         </section>
       </PageTransition>
     </Layout>
