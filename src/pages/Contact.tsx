@@ -13,6 +13,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Visit Us",
     details: [
+      "D-19 Sector-55, Noida",
       "Plot No - 112, Ground Floor,",
       "Udyog Kendra II, Greater Noida,",
       "Gautam Buddha Nagar - 201310,",

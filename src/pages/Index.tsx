@@ -70,7 +70,7 @@ const features = [
 const stats = [
   { value: "24", suffix: "+", label: "Years of Excellence" },
   { value: "50", suffix: "+", label: "Skilled Team Members" },
-  { value: "25", prefix: "₹", suffix: " Cr+", label: "Annual Turnover" },
+  { value: "10-12", prefix: "₹", suffix: " Cr", label: "Annual Turnover" },
   { value: "100", suffix: "%", label: "Quality Tested" },
 ];
 
@@ -91,9 +91,9 @@ const products = [
     slug: "fruits-corrugated-boxes",
   },
   {
-    name: "5 Ply Heavy Duty Boxes",
-    description: "Maximum strength for heavy or delicate items.",
-    slug: "5-ply-boxes",
+    name: "Duplex Printed Boxes",
+    description: "Premium quality with excellent print finish.",
+    slug: "duplex-printed-boxes",
   },
 ];
 

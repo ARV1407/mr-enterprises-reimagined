@@ -12,11 +12,6 @@ import fruitsBoxesImg from "@/assets/products/fruits-boxes.jpg";
 import duplexBoxesImg from "@/assets/products/duplex-boxes.jpg";
 import packagingBoxesImg from "@/assets/products/packaging-boxes.jpg";
 import packingBoxesImg from "@/assets/products/packing-boxes.jpg";
-import fivePlyBoxesImg from "@/assets/products/5-ply-boxes.jpg";
-import cartonBoxesImg from "@/assets/products/carton-boxes.jpg";
-import boppAdhesiveTapesImg from "@/assets/products/bopp-adhesive-tapes.jpg";
-import boppTapesImg from "@/assets/products/bopp-tapes.jpg";
-import corrugatedRollImg from "@/assets/products/corrugated-roll.jpg";
 import paperRollImg from "@/assets/products/paper-roll.jpg";
 
 const productCategories = [
@@ -26,11 +21,6 @@ const productCategories = [
   { name: "Duplex Printed Boxes", slug: "duplex-printed-boxes", image: duplexBoxesImg, category: "Boxes" },
   { name: "Packaging Corrugated Boxes", slug: "packaging-corrugated-boxes", image: packagingBoxesImg, category: "Boxes" },
   { name: "Packing Boxes", slug: "packing-boxes", image: packingBoxesImg, category: "Boxes" },
-  { name: "5 Ply Boxes", slug: "5-ply-boxes", image: fivePlyBoxesImg, category: "Heavy Duty" },
-  { name: "Carton Boxes", slug: "carton-boxes", image: cartonBoxesImg, category: "Boxes" },
-  { name: "BOPP Adhesive Tapes", slug: "bopp-adhesive-tapes", image: boppAdhesiveTapesImg, category: "Tapes" },
-  { name: "BOPP Tapes", slug: "bopp-tapes", image: boppTapesImg, category: "Tapes" },
-  { name: "Corrugated Roll", slug: "corrugated-roll", image: corrugatedRollImg, category: "Rolls" },
   { name: "Paper Roll", slug: "paper-roll", image: paperRollImg, category: "Rolls" },
 ];
 

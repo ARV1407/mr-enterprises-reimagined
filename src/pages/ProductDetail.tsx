@@ -12,11 +12,6 @@ import fruitsBoxesImg from "@/assets/products/fruits-boxes.jpg";
 import duplexBoxesImg from "@/assets/products/duplex-boxes.jpg";
 import packagingBoxesImg from "@/assets/products/packaging-boxes.jpg";
 import packingBoxesImg from "@/assets/products/packing-boxes.jpg";
-import fivePlyBoxesImg from "@/assets/products/5-ply-boxes.jpg";
-import cartonBoxesImg from "@/assets/products/carton-boxes.jpg";
-import boppAdhesiveTapesImg from "@/assets/products/bopp-adhesive-tapes.jpg";
-import boppTapesImg from "@/assets/products/bopp-tapes.jpg";
-import corrugatedRollImg from "@/assets/products/corrugated-roll.jpg";
 import paperRollImg from "@/assets/products/paper-roll.jpg";
 
 const productData: Record<string, { name: string; description: string; image: string; features: string[] }> = {
@@ -56,36 +51,6 @@ const productData: Record<string, { name: string; description: string; image: st
     image: packingBoxesImg,
     features: ["Everyday use", "Affordable pricing", "Easy assembly", "Durable material", "Standard sizes"]
   },
-  "5-ply-boxes": {
-    name: "5 Ply Boxes",
-    description: "Heavy-duty 5 Ply Boxes engineered for maximum strength and durability. These boxes feature five layers of corrugated material, providing superior protection for heavy or delicate items.",
-    image: fivePlyBoxesImg,
-    features: ["Maximum strength", "5-layer construction", "Heavy load capacity", "Extra protection", "Industrial grade"]
-  },
-  "carton-boxes": {
-    name: "Carton Boxes",
-    description: "Standard Carton Boxes manufactured to meet diverse packaging requirements. These boxes are versatile, cost-effective, and suitable for various industries including FMCG, retail, e-commerce, and manufacturing.",
-    image: cartonBoxesImg,
-    features: ["Versatile use", "Industry standard", "Quick assembly", "Bulk availability", "Consistent quality"]
-  },
-  "bopp-adhesive-tapes": {
-    name: "BOPP Adhesive Tapes",
-    description: "High-quality BOPP Adhesive Tapes with excellent adhesion properties. These tapes are manufactured using premium quality BOPP film with acrylic-based adhesive coating.",
-    image: boppAdhesiveTapesImg,
-    features: ["Strong adhesion", "Clear finish", "Tear resistant", "Multiple widths", "Long-lasting bond"]
-  },
-  "bopp-tapes": {
-    name: "BOPP Tapes",
-    description: "Premium BOPP Tapes offering superior performance for packaging applications. Our BOPP tapes feature strong adhesion, excellent clarity, and consistent quality.",
-    image: boppTapesImg,
-    features: ["Premium quality", "Crystal clear", "Strong bond", "Easy application", "Various lengths"]
-  },
-  "corrugated-roll": {
-    name: "Corrugated Roll",
-    description: "Flexible Corrugated Roll material for protective packaging applications. These rolls provide cushioning and protection for fragile items during transit.",
-    image: corrugatedRollImg,
-    features: ["Flexible wrapping", "Cushioning effect", "Custom length cutting", "Lightweight", "Shock absorption"]
-  },
   "paper-roll": {
     name: "Paper Roll",
     description: "Quality Paper Roll products for various packaging and industrial applications. Our paper rolls are manufactured using high-grade kraft paper with consistent thickness and strength.",
@@ -97,8 +62,8 @@ const productData: Record<string, { name: string; description: string; image: st
 const relatedProducts = [
   { name: "Corrugated Cardboard Boxes", slug: "corrugated-cardboard-boxes", image: corrugatedBoxesImg },
   { name: "Printed Corrugated Boxes", slug: "printed-corrugated-boxes", image: printedBoxesImg },
-  { name: "5 Ply Boxes", slug: "5-ply-boxes", image: fivePlyBoxesImg },
-  { name: "BOPP Tapes", slug: "bopp-tapes", image: boppTapesImg },
+  { name: "Duplex Printed Boxes", slug: "duplex-printed-boxes", image: duplexBoxesImg },
+  { name: "Paper Roll", slug: "paper-roll", image: paperRollImg },
 ];
 
 const ProductDetail = () => {
