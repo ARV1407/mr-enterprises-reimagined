@@ -12,18 +12,15 @@ const addresses = [
   {
     label: "Head Office",
     details: [
-      "D-19 Sector-55, Noida",
-      "Plot No - 112, Ground Floor,",
-      "Udyog Kendra II, Greater Noida,",
-      "Gautam Buddha Nagar - 201310",
-    ],
-  },
-  {
-    label: "Manufacturing Unit",
-    details: [
       "Plot No. 10, Gali No. 1,",
       "Near Shiv Mandir, Khera Choganpur,",
       "Greater Noida, UP - 201306",
+    ],
+  },
+  {
+    label: "Alternative Address",
+    details: [
+      "D-19 Sector-55, Noida",
     ],
   },
 ];
