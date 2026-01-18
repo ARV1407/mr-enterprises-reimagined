@@ -50,17 +50,12 @@ const companyUSP = [
 ];
 
 const productList = [
-  "Corrugated Boxes",
-  "Duplex Printed Boxes",
-  "Fruits Corrugated Boxes",
-  "5 Ply Corrugated Box",
+  "Corrugated Cardboard Boxes",
   "Printed Corrugated Boxes",
-  "Packaging Boxes",
+  "Fruits Corrugated Boxes",
+  "Duplex Printed Boxes",
+  "Packaging Corrugated Boxes",
   "Packing Boxes",
-  "Carton Box",
-  "Corrugated Roll",
-  "BOPP Tapes",
-  "BOPP Adhesive Tapes",
   "Paper Roll",
 ];
 

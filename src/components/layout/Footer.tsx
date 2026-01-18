@@ -10,10 +10,12 @@ const quickLinks = [
 ];
 
 const products = [
-  { name: "Corrugated Boxes", path: "/products/corrugated-cardboard-boxes" },
-  { name: "Printed Boxes", path: "/products/printed-corrugated-boxes" },
-  { name: "Fruits Boxes", path: "/products/fruits-corrugated-boxes" },
-  { name: "Duplex Boxes", path: "/products/duplex-printed-boxes" },
+  { name: "Corrugated Cardboard Boxes", path: "/products/corrugated-cardboard-boxes" },
+  { name: "Printed Corrugated Boxes", path: "/products/printed-corrugated-boxes" },
+  { name: "Fruits Corrugated Boxes", path: "/products/fruits-corrugated-boxes" },
+  { name: "Duplex Printed Boxes", path: "/products/duplex-printed-boxes" },
+  { name: "Packaging Corrugated Boxes", path: "/products/packaging-corrugated-boxes" },
+  { name: "Packing Boxes", path: "/products/packing-boxes" },
   { name: "Paper Roll", path: "/products/paper-roll" },
 ];
 
